@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from math import pi, sqrt
+import time
 
 # Archimedean Spiral with Evolution Strategy
 # The main goal of this small demo is to create points (red points) with Evolution Strategy algorithm
@@ -40,7 +41,6 @@ class ArchimedeanSpiralMeetES(object):
                 if sqrt(((pred[i][0] - XYList[0][m]) ** 2 + (pred[i][1] - XYList[1][m]) ** 2)) < 0.01:  
                     pred[i][2] = 1
                     deleteList.append(m)
-
 
         XList = np.delete(XList, deleteList)
         YList = np.delete(YList, deleteList)
@@ -96,8 +96,8 @@ class ArchimedeanSpiralMeetES(object):
             KidsMutation[0] = pop['Mutation'][p1][0][0]
             KidsMutation[1] = pop['Mutation'][p1][0][1]
             mutatexy = np.random.rand(*KidsMutation.shape) - 0.5
-            KidsMutation[0] = np.maximum(KidsMutation[0] + mutatexy[0], 0.)
-            KidsMutation[1] = np.maximum(KidsMutation[1] + mutatexy[1], 0.)
+            #KidsMutation[0] = np.maximum(KidsMutation[0] + mutatexy[0], 0.)
+            #KidsMutation[1] = np.maximum(KidsMutation[1] + mutatexy[1], 0.)
             KidsDNA[0] += KidsMutation[0] * np.random.randn(*KidsDNA[0].shape)
             KidsDNA[1] += KidsMutation[1] * np.random.randn(*KidsDNA[1].shape)
             KidsDNA[0] = np.clip(KidsDNA[0], *self.DNA_Bound)
@@ -108,6 +108,7 @@ class ArchimedeanSpiralMeetES(object):
     # Keep good individuals based on the fitness we mentioned before.
     def keep_good_kids(self, pop, kids, XYList):
         oldpop = {}
+        n_better = 0
         for key in ['DNA', 'Mutation']:
             oldpop[key] = pop[key]
             pop[key] = np.vstack((pop[key], kids[key]))
@@ -117,8 +118,13 @@ class ArchimedeanSpiralMeetES(object):
             idx = np.arange(pop['DNA'].shape[0])
             if idx[fitness.argsort()][- (self.Pop_Size+1)] != 299792458:
                 good_idx = idx[fitness.argsort()][-self.Pop_Size:]
+                for index in good_idx:
+                    if index > 99:
+                        n_better += 1
+                better_radio = n_better / self.Kids_Size
                 for key in ['DNA', 'Mutation']:
                     pop[key] = pop[key][good_idx]
+                pop['Mutation'][:, :2] *= np.exp(np.ones(pop['Mutation'][:, :2].shape) / 3 * (better_radio - 0.2) / (1 - 0.2))
                 return pop, 0
             else:
                 return oldpop, 1
@@ -147,9 +153,11 @@ class ArchimedeanSpiralMeetES(object):
             pop, trigger = self.keep_good_kids(pop, kids, XYList)
             if trigger == 1:
                 print('Finished!')
+                print("Finished time:" + str(time.asctime(time.localtime(time.time()))))
                 break
         plt.ioff(); plt.show()
 
 if __name__ == '__main__':
     tool = ArchimedeanSpiralMeetES()
+    print("Start time:" + str(time.asctime(time.localtime(time.time()))))
     tool.plot()
