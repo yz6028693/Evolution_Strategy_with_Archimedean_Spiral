@@ -2,4 +2,6 @@ This is a small demo with using the evolution strategy to find the random points
 
 The main goal of this small demo is to create points (red points) with Evolution Strategy algorithm to get close to every random points (blue points) created from Archimedean Spiral curve.
 
+The Video of this demo can be accessed here: https://youtu.be/oSOon9Z36iY
+
 Python package needed: 1. Numpy; 2. Matplotlib
