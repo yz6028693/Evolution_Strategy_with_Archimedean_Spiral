@@ -8,4 +8,4 @@ Python package needed: 1. Numpy; 2. Matplotlib
 
 The demo looks like this:
 
-<a href="/gif/-kJOCJn" title=""><img src="https://i.makeagif.com/media/11-15-2017/kJOCJn.gif" alt=""></a><div style="font-size:11px;">make <a href="/" title="make a gif">action GIFs</a> like this at MakeaGif</div>
+<a><img src="https://media.giphy.com/media/d30paAzANmWcwipG/giphy.gif"></a>
