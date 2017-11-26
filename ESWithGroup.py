@@ -136,7 +136,7 @@ class ArchimedeanSpiralMeetES(object):
                     if pop['DNA'][j][2] != -1:
                         X_j = pop['DNA'][j][0]
                         Y_j = pop['DNA'][j][1]
-                        if sqrt((X_j - X_i) ** 2  + (Y_j - Y_i) ** 2)  < 1.5:
+                        if sqrt((X_j - X_i) ** 2  + (Y_j - Y_i) ** 2)  < 1.2:
                             within = 1
                         else:
                             within = 0
