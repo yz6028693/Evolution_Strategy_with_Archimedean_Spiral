@@ -146,6 +146,7 @@ class ArchimedeanSpiralMeetES(object):
             pop, trigger = self.keep_good_kids(pop, kids, XYList)
             if trigger == 1:
                 print('Finished!')
+                print('Number of generations: ', _)
                 break
         plt.ioff(); plt.show()
 
