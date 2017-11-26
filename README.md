@@ -8,7 +8,7 @@ Python package needed: 1. Numpy; 2. Matplotlib
 
 <div style="overflow:hidden; width:98%;">
 <div style="float: left; width: 48%;">
-The demo looks like this:
+Old version without grouping:
 
 <a><img src="https://media.giphy.com/media/d30paAzANmWcwipG/giphy.gif"></a>
 </div>
