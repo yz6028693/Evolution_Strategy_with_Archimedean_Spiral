@@ -9,3 +9,8 @@ Python package needed: 1. Numpy; 2. Matplotlib
 The demo looks like this:
 
 <a><img src="https://media.giphy.com/media/d30paAzANmWcwipG/giphy.gif"></a>
+
+New algorithm with separate group and parallel computing：
+
+<a><img src="https://media.giphy.com/media/3osBLgoBOSWWqgh5C0/giphy.gif"></a>
+
