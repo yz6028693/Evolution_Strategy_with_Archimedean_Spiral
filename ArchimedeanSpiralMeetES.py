@@ -84,8 +84,7 @@ class ArchimedeanSpiralMeetES(object):
     # Function to create next generation (Based on the DNA and the mutation related to it.)
     # Note: Think DNA as the mean value of a normally distributed data and the mutation is its standard deviation.
     def make_kids(self, pop, Kids_Size):
-        kids = {'DNA': np.empty((Kids_Size, self.DNA_Elements))}
-        kids['Mutation'] = np.empty_like(kids['DNA'])
+        kids = {'DNA': np.zeros((Kids_Size, self.DNA_Elements)), 'Mutation': np.zeros((Kids_Size, self.DNA_Elements))}
         for KidsDNA, KidsMutation in zip(kids['DNA'], kids['Mutation']):
             while True:
                 p1 = np.random.choice(np.arange(self.Pop_Size), size=1, replace=False)
