@@ -7,6 +7,7 @@ The Video of this demo can be accessed here: https://youtu.be/oSOon9Z36iY
 Python package needed: 1. Numpy; 2. Matplotlib
 
 <div>
+<div>
 The demo looks like this:
 
 <a><img src="https://media.giphy.com/media/d30paAzANmWcwipG/giphy.gif"></a>
@@ -16,5 +17,6 @@ The demo looks like this:
 New algorithm with separate group and parallel computing：
 
 <a><img src="https://media.giphy.com/media/3osBLgoBOSWWqgh5C0/giphy.gif" width = 48% position = 'ralative'></a>
+</div>
 </div>
 
