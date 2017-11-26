@@ -6,7 +6,7 @@ The Video of this demo can be accessed here: https://youtu.be/oSOon9Z36iY
 
 Python package needed: 1. Numpy; 2. Matplotlib
 
-<div>
+<div style="overflow: hidden;">
 <div>
 The demo looks like this:
 
