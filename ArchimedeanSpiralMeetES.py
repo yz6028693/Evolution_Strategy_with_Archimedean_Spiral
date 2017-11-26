@@ -14,7 +14,7 @@ class ArchimedeanSpiralMeetES(object):
         self.DNA_Bound = [-6, 6]         # The bounds of DNA.
         self.Generations = 500           # Maximum generations in this program.
         self.Pop_Size = 100              # Number of population size.
-        self.Kids_Size = 50              # Number of kids for each generation. Note: in this demo we used the asexual reproduction which each individual in last generation can create kids by itself.
+        self.Kids_Size = 100              # Number of kids for each generation. Note: in this demo we used the asexual reproduction which each individual in last generation can create kids by itself.
 
 
     # Function to transfer polar coordinate system to Cartesian coordinate system. （regular coordinate system）
