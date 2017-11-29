@@ -157,27 +157,11 @@ class ArchimedeanSpiralMeetES(object):
                             within = 0
                     else:
                         within = 0
-                        #distance = sqrt((X_i - X_j) ** 2 + (Y_i - Y_j) ** 2)
                     col.append(within)
             else:
                 col = [0] * len(pop['DNA'])
             row.append(col)
         return np.array(row)
-
-    # def CalDensity(self, d_ij, cutoffdistance):
-    #     density = []
-    #     for i in range(len(d_ij)):
-    #         sum = 0
-    #         for distance in d_ij[i]:
-    #             if distance < cutoffdistance:
-    #                 sum += 1
-    #         density.append([sum, i])
-    #     return density
-    #
-    # def NearestDistanceToHigherDensity(self, d_ij, densities):
-    #     for i in range(len(densities)):
-    #         densities[:, 0].sort(reverse = True).index(densities[i,0])
-    #         np.array(densities.sort(key=itemgetter(0), reverse = True))[:,0].index
 
 
     # Separate Group for parallel work
@@ -204,7 +188,6 @@ class ArchimedeanSpiralMeetES(object):
         for i in range(len(array)):
             colorlist.append(ColorOptions[int(array[i])])
         return colorlist
-
 
 
     # Plot the process of this Evolution Strategy program.
