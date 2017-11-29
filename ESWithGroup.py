@@ -105,21 +105,36 @@ class ArchimedeanSpiralMeetES(object):
 
     # Function to create next generation (Based on the DNA and the mutation related to it.)
     # Note: Think DNA as the mean value of a normally distributed data and the mutation is its standard deviation.
-    def make_kids(self, pop, Kids_Size):
+    def make_kids(self, pop, Kids_Size, i):
         kids = {'DNA': np.zeros((Kids_Size, self.DNA_Elements)), 'Mutation': np.zeros((Kids_Size, self.DNA_Elements))}
-        for KidsDNA, KidsMutation in zip(kids['DNA'], kids['Mutation']):
-            p1 = np.random.choice(np.arange(len(pop['DNA'])), size=2, replace=True)
-            KidsDNA[0] = (pop['DNA'][p1[0]][0] + pop['DNA'][p1[1]][0])/2
-            KidsDNA[1] = (pop['DNA'][p1[0]][1] + pop['DNA'][p1[1]][1])/2
-            KidsMutation[0] = (pop['Mutation'][p1[0]][0] + pop['Mutation'][p1[1]][0])/2
-            KidsMutation[1] = (pop['Mutation'][p1[0]][1] + pop['Mutation'][p1[1]][1])/2
-            mutatexy = np.random.rand(*KidsMutation.shape) - 0.5
-            KidsMutation[0] = np.maximum(KidsMutation[0] + mutatexy[0], 0.)
-            KidsMutation[1] = np.maximum(KidsMutation[1] + mutatexy[1], 0.)
-            KidsDNA[0] += KidsMutation[0] * np.random.randn(*KidsDNA[0].shape)
-            KidsDNA[1] += KidsMutation[1] * np.random.randn(*KidsDNA[1].shape)
-            KidsDNA[0] = np.clip(KidsDNA[0], *self.DNA_Bound)
-            KidsDNA[1] = np.clip(KidsDNA[1], *self.DNA_Bound)
+        if i == 0 and Kids_Size != self.Pop_Size:
+            for KidsDNA, KidsMutation in zip(kids['DNA'], kids['Mutation']):
+                p1 = np.random.choice(np.arange(len(pop['DNA'])), size=1, replace=False)
+                KidsDNA[0] = pop['DNA'][p1][0][0]
+                KidsDNA[1] = pop['DNA'][p1][0][1]
+                KidsMutation[0] = pop['Mutation'][p1][0][0]
+                KidsMutation[1] = pop['Mutation'][p1][0][1]
+                mutatexy = np.random.rand(*KidsMutation.shape) - 0.5
+                KidsMutation[0] = np.maximum(KidsMutation[0] + mutatexy[0], 0.)
+                KidsMutation[1] = np.maximum(KidsMutation[1] + mutatexy[1], 0.)
+                KidsDNA[0] += KidsMutation[0] * np.random.randn(*KidsDNA[0].shape)
+                KidsDNA[1] += KidsMutation[1] * np.random.randn(*KidsDNA[1].shape)
+                KidsDNA[0] = np.clip(KidsDNA[0], *self.DNA_Bound)
+                KidsDNA[1] = np.clip(KidsDNA[1], *self.DNA_Bound)
+        else:
+            for KidsDNA, KidsMutation in zip(kids['DNA'], kids['Mutation']):
+                p1 = np.random.choice(np.arange(len(pop['DNA'])), size=2, replace=True)
+                KidsDNA[0] = (pop['DNA'][p1[0]][0] + pop['DNA'][p1[1]][0])/2
+                KidsDNA[1] = (pop['DNA'][p1[0]][1] + pop['DNA'][p1[1]][1])/2
+                KidsMutation[0] = (pop['Mutation'][p1[0]][0] + pop['Mutation'][p1[1]][0])/2
+                KidsMutation[1] = (pop['Mutation'][p1[0]][1] + pop['Mutation'][p1[1]][1])/2
+                mutatexy = np.random.rand(*KidsMutation.shape) - 0.5
+                KidsMutation[0] = np.maximum(KidsMutation[0] + mutatexy[0], 0.)
+                KidsMutation[1] = np.maximum(KidsMutation[1] + mutatexy[1], 0.)
+                KidsDNA[0] += KidsMutation[0] * np.random.randn(*KidsDNA[0].shape)
+                KidsDNA[1] += KidsMutation[1] * np.random.randn(*KidsDNA[1].shape)
+                KidsDNA[0] = np.clip(KidsDNA[0], *self.DNA_Bound)
+                KidsDNA[1] = np.clip(KidsDNA[1], *self.DNA_Bound)
         return kids
 
 
@@ -199,7 +214,7 @@ class ArchimedeanSpiralMeetES(object):
         pop['DNA'][:, 2] = 0
         pop['Mutation'][:, 2] = 0
         plt.ion()
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(9, 7))
         plt.rcParams['axes.facecolor'] = (0.2, 0.2, 0.2)
         XYList = self.RandomPoints(20)
         XYList1 = self.PlotArchimedeanSpiral()
@@ -220,7 +235,7 @@ class ArchimedeanSpiralMeetES(object):
                     for key in ['DNA', 'Mutation']:
                         GroupPop[key] = pop[key][np.where(pop['DNA'][:, 2] == i)]
                     GroupPopSize = len(np.where(pop['DNA'][:, 2] == i)[0])
-                    GroupKids = self.make_kids(GroupPop, GroupPopSize)
+                    GroupKids = self.make_kids(GroupPop, GroupPopSize, i)
                     GroupPop, trigger = self.keep_good_kids(GroupPop, GroupKids, XYList)
                     if trigger == 1:
                         break
@@ -250,7 +265,7 @@ class ArchimedeanSpiralMeetES(object):
                 sca = []
             for i in np.unique(pop['DNA'][:, 2]):
                 sca.append(plt.scatter(pop['DNA'][np.where(pop['DNA'][:, 2] == i)][:, 0], pop['DNA'][np.where(pop['DNA'][:, 2] == i)][:, 1], s=100, lw=0, c=self.colors(pop['DNA'][np.where(pop['DNA'][:, 2] == i)][:, 2], colors), alpha=0.9, label=labels[int(i)]))
-            plt.legend(loc='upper left', numpoints=1, ncol=1, fontsize=10, bbox_to_anchor=(1, 1));plt.pause(0.03)
+            plt.legend(loc='upper left', numpoints=1, ncol=1, fontsize=10, bbox_to_anchor=(1, 1));plt.pause(0.02)
             plt.margins(0.1)
             plt.subplots_adjust(right = 0.8)
         plt.ioff();plt.show()
