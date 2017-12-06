@@ -1,4 +1,4 @@
-Similar to Genetic Algorithm, the Evolution Strategy is a kind of Machine learning method without using gradient descent algorithm (used in Neural Network) to find optimized solutions. Instead, it let the ‘environment’ to choose the best fit and learn from it to adapt to the environment (The idea of Evolution). 
+Similar to Genetic Algorithm, the Evolution Strategy is a kind of Machine learning method without using derivative and backpropagation (used in common Neural Network) to find optimized solutions. Instead, it let the ‘environment’ to choose the best fit and learn from it to adapt to the environment (The idea of Evolution). 
 
 The main goal of this demo is to apply Evolution Strategy algorithm to create points (red points) to find location of each random point (blue point) created from Archimedean Spiral curve.
 
