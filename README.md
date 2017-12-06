@@ -1,6 +1,4 @@
-This is a small demo with using the evolution strategy to find the random points created from Archimedean Spiral curve.
-
-The main goal of this small demo is to apply Evolution Strategy algorithm to create points (red points) to find location of each random point (blue point) created from Archimedean Spiral curve.
+The main goal of this demo is to apply Evolution Strategy algorithm to create points (red points) to find location of each random point (blue point) created from Archimedean Spiral curve.
 
 The details of this demo can be accessed here: <a href = 'Evolution Strategy Algorithm and You.pdf'>Link</a>
 
