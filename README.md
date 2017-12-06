@@ -12,7 +12,7 @@ Python package needed: 1. Numpy; 2. Matplotlib
 Old version without grouping:
 
 
-<a><img src="Gif&Images/ES_FirstVersion.gif" width = 50% position = 'ralative'></a>
+<a><img src="Gif&Images/ES_OldVersion.gif" width = 50% position = 'ralative'></a>
 </div>
 
 <div style="float: left; width: 48%;">
