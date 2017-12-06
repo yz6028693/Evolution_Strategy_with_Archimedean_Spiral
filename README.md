@@ -23,7 +23,7 @@ New algorithm with separate group and parallel computing：
 <a><img src="Gif&Images/ES_WithGroup.gif" width = 50% position = 'ralative'></a>
 </div>
 
-The Evolution Strategy is very flexible and can be used when we can translate our problem to a ‘environment’ where good or bad can be tell. In this demp, I consider each blue point as a planet, as a result, the environment of this demo looks like this (Rescaled gravitational field in this 2-D space):
+The Evolution Strategy is very flexible and can be used when we can translate our problem to a ‘environment’ where good or bad can be tell. In this demo, I consider each blue point as a planet, as a result, the environment of this demo looks like this (Rescaled gravitational field in this 2-D space):
 
 
 <a><img src="Gif&Images/Environment.png" width = 50% position = 'ralative'></a>
