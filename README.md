@@ -16,6 +16,6 @@ Old version without grouping:
 <div style="float: left; width: 48%;">
 New algorithm with separate group and parallel computing：
 
-<a><img src="https://media.giphy.com/media/3osBLgoBOSWWqgh5C0/giphy.gif" width = 48% position = 'ralative'></a>
+<a><img src="Gif&Images/ES_WithGroup.gif" width = 48% position = 'ralative'></a>
 </div>
 </div>
