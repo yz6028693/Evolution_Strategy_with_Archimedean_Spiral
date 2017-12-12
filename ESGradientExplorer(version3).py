@@ -41,9 +41,9 @@ class ESGradientExplorer(object):
         return kidswithnoise, noise
 
 
-    # Function to calculate the fitness (parameter we based on to define which individuals are better) of each individual (last and this generation).
+    # Function to calculate the rewards (parameter we based on to define which individuals are better) of each individual.
     # The goal of our population (red points) is to get close to the blue points.
-    # Since I think the blue points as different planets, I used the gravitation equation to calculate the fitness. Salute to Isaac Newton.
+    # Since I think the blue points as different planets, I used the gravitation equation to calculate the rewards. Salute to Isaac Newton.
     def get_rewards(self, kidswithnoise, XYList):
 
         Gravity = np.zeros(self.Pop_Size)
@@ -93,8 +93,6 @@ class ESGradientExplorer(object):
         kidswithnoise, noise = self.KidsWithNoise(CenterPoint, sigma)
         NormalizedRewards = self.get_rewards(kidswithnoise, XYList)
         updatedCenterPoint = self.UpdateCenterPoint(CenterPoint, NormalizedRewards, noise, alpha, sigma)
-        #updatedCenterPoint, kidswithnoise = self.WorkFlow(CenterPoint, XYList)
-
         return updatedCenterPoint, kidswithnoise
 
 
@@ -112,8 +110,8 @@ class ESGradientExplorer(object):
         XYList1 = self.PlotArchimedeanSpiral()
         bg1 = plt.plot(XYList1[0], XYList1[1], 'w--')
         bg2 = plt.scatter(XYList[0], XYList[1], s=30, c='b', edgecolors='white', linewidth='0.5', zorder=10)
-        sigmas = np.random.uniform(low=0.03, high=0.06, size=(N_workers))
-        alphas = np.random.uniform(low=0.008, high=0.011, size=(N_workers))
+        sigmas = np.random.uniform(low=0.03, high=0.06, size=(N_workers)) # Different standard deviations range from 0.03 to 0.06
+        alphas = np.random.uniform(low=0.008, high=0.011, size=(N_workers)) # Different learn rates range from 0.008 to 0.011
         InitPoints = self.InitPoint(N_workers)
         CenterPoints = InitPoints
         colors = ['c', 'y', 'g', 'm', 'w', 'k', 'r']
@@ -127,9 +125,6 @@ class ESGradientExplorer(object):
                     sca[m].remove()
                 sca = []
             if 'scaf' in globals(): scaf.remove()
-
-            #updatedCenterPoint, sca = self.WorkFlow(CenterPoint, XYList)
-
 
             explorers = [pool.apply_async(self.WorkFlow, (CenterPoints[i], XYList, sigmas[i], alphas[i]))
                          for i in range(N_workers)]
@@ -194,4 +189,4 @@ class ESGradientExplorer(object):
 
 if __name__ == '__main__':
     tool = ESGradientExplorer()
-    tool.plot(3)
+    tool.plot(3) # three explorers
