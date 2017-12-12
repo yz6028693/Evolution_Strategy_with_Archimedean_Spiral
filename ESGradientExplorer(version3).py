@@ -11,14 +11,8 @@ import multiprocessing as mp
 class ESGradientExplorer(object):
 
     def __init__(self):
-
-        self.DNA_Elements = 3  # Number of elements each DNA has.
-        self.DNA_Bound = [-6, 6]  # The bounds of DNA.
-        self.Generations = 500  # Maximum generations in this program.
         self.Pop_Size = 100  # Number of population size.
-        self.Kids_Size = 100  # Number of kids for each generation.
-        self.sigma = 0.05
-        self.alpha = 0.008
+
 
     # Function to transfer polar coordinate system to Cartesian coordinate system. （regular coordinate system）
     def pol2cart(self, rho, phi):
