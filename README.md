@@ -36,7 +36,7 @@ Note:
 ② Adaptive standard deviation and learning rate will also be considered in following versions. (explorers with too small standard deviation and learning rate will move very slow while explorers with too big standard deviation and learning rate will shake among several blue planets)
 
 
-<a><img src="Gif&Images/ESGradientExplorer.gif" width = 50% position = 'ralative'></a>
+<a><img src="Gif&Images/ESGradientExplorers.gif" width = 50% position = 'ralative'></a>
 </div>
 
 
