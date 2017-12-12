@@ -33,7 +33,7 @@ Note:
 
 ① You will mention in this version that even though I give different explorers different standard deviations (affect the max radius of its following points) and learning rates (affect their speed when moving in this space) they will still easily get close to each other and do repeated work. This is because this 2-D space is relatively small and also different explorers can't communicate with each other to separate works. I will try to improve this in later versions.
 
-② Adaptive standard deviation and learning rate will also consider in following versions. (explorers with too small standard deviation and learning rate will move very slow while explorers with too big standard deviation and learning rate will shake among several blue planets)
+② Adaptive standard deviation and learning rate will also be considered in following versions. (explorers with too small standard deviation and learning rate will move very slow while explorers with too big standard deviation and learning rate will shake among several blue planets)
 
 
 <a><img src="Gif&Images/ESGradientExplorer.gif" width = 50% position = 'ralative'></a>
