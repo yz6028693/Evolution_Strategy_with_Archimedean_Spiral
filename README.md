@@ -9,7 +9,7 @@ Python package needed: 1. Numpy; 2. Matplotlib
 <div style="overflow:hidden; width:98%;">
 <div style="float: left; width: 48%;">
 
-Old version without grouping:
+Old version without grouping (version 1):
 
 
 <a><img src="Gif&Images/ES_OldVersion.gif" width = 50% position = 'ralative'></a>
@@ -17,11 +17,20 @@ Old version without grouping:
 
 <div style="float: left; width: 48%;">
 
-New algorithm with separate group and parallel computing：
+Algorithm with separate group and parallel computing (version 2)：
 
 
 <a><img src="Gif&Images/ES_WithGroup.gif" width = 50% position = 'ralative'></a>
 </div>
+
+<div style="float: left; width: 48%;">
+
+New algorithm with multiprocessing and using Evolution Strategy to estimate gradient (version 3)：
+
+
+<a><img src="Gif&Images/ESGradientExplorer.gif" width = 50% position = 'ralative'></a>
+</div>
+
 
 The Evolution Strategy is very flexible and can be used when we can translate our problem to a ‘environment’ where good or bad can be tell. In this demo, I consider each blue point as a planet, as a result, the environment of this demo looks like this (Rescaled gravitational field in this 2-D space):
 
