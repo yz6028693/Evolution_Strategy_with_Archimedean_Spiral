@@ -172,13 +172,6 @@ class ESGradientExplorer(object):
         return [x_1, y_1]
 
 
-    def colors(self, array, ColorOptions):
-        colorlist = []
-        for i in range(len(array)):
-            colorlist.append(ColorOptions[int(array[i])])
-        return colorlist
-
-
 if __name__ == '__main__':
     tool = ESGradientExplorer()
     tool.plot(3) # three explorers
