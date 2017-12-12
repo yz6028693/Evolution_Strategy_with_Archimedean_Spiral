@@ -32,7 +32,6 @@ The idea of this version is from a OpenAI's <a href = 'https://arxiv.org/pdf/170
 Note: 
 
 1.You will mention in this version that even though I give different explorer different standard deviation (affect the max radius of its following points) and learning rate (affect their speed when move in this space) they will still easily get close to each other and do repeated work. This is because this 2-D space is relatively small and also different explorers can't communicate with each other to separte works. I will try to improve this in later versions. 
-
 2. Adaptive standard deviation and learning rate will also add in following versions. (explorers with too small standard deviation and learning rate will move very slow while explorers with too big standard deviation and learning rate will shake among several blue planets)
 
 
