@@ -27,6 +27,8 @@ Algorithm with separate group and parallel computing (version 2)：
 
 New algorithm with multiprocessing and using Evolution Strategy to estimate gradient (version 3)：
 
+The idea of this version is from a OpenAI's paper and blog.
+
 
 <a><img src="Gif&Images/ESGradientExplorer.gif" width = 50% position = 'ralative'></a>
 </div>
