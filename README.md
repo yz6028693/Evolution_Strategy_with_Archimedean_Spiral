@@ -28,7 +28,12 @@ Algorithm with separate group and parallel computing (version 2)：
 New algorithm with multiprocessing and using Evolution Strategy to estimate gradient (version 3)：
 
 The idea of this version is from a OpenAI's <a href = 'https://arxiv.org/pdf/1703.03864.pdf'>paper</a> and <a href = 'https://blog.openai.com/evolution-strategies/'>blog</a>. Their basic idea is to use Evolution Strategy to estimate gradient in the environment. I also applied multiprocessing in this version, as a rusult, different explorer is computed in different core. 
-Note: You will mention in this version that even though I give different explorer different standard deviation (affect the max radius of its following points) and learning rate (affect their speed when move in this space) they will still easily get close to each other and do repeated work.
+
+Note: 
+
+1.You will mention in this version that even though I give different explorer different standard deviation (affect the max radius of its following points) and learning rate (affect their speed when move in this space) they will still easily get close to each other and do repeated work. This is because this 2-D space is relatively small and also different explorers can't communicate with each other to separte works. I will try to improve this in later versions. 
+
+2. Adaptive standard deviation and learning rate will also add in following versions. (explorers with too small standard deviation and learning rate will move very slow while explorers with too big standard deviation and learning rate will shake among several blue planets)
 
 
 <a><img src="Gif&Images/ESGradientExplorer.gif" width = 50% position = 'ralative'></a>
