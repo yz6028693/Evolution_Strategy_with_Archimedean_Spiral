@@ -27,7 +27,7 @@ Algorithm with separate group and parallel computing (version 2)：
 
 New algorithm with multiprocessing and using Evolution Strategy to estimate gradient (version 3)：
 
-The idea of this version is from a OpenAI's <a href = 'https://arxiv.org/pdf/1703.03864.pdf'>paper</a> and <a href = 'https://blog.openai.com/evolution-strategies/'>blog</a>. Their basic idea is to use Evolution Strategy to estimate gradient in environment. I also applied multiprocessing in this version, as a rusult, different explorers are computed in different cores. 
+The idea of this version is from an OpenAI's <a href = 'https://arxiv.org/pdf/1703.03864.pdf'>paper</a> and <a href = 'https://blog.openai.com/evolution-strategies/'>blog</a>. Their basic idea is to use Evolution Strategy to estimate gradient in environment. I also applied multiprocessing in this version, as a rusult, different explorers are computed in different cores. 
 
 Note: 
 
