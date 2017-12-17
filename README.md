@@ -4,7 +4,7 @@ The main goal of this demo is to apply Evolution Strategy algorithm to create po
 
 The details of this demo can be accessed here: <a href = 'Evolution Strategy Algorithm and You.pdf'>Link</a>
 
-Python package needed: 1. Numpy; 2. Matplotlib
+Python packages needed: 1. Numpy; 2. Matplotlib
 
 <div style="overflow:hidden; width:98%;">
 <div style="float: left; width: 48%;">
