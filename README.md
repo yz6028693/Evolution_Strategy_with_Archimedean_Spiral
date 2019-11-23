@@ -18,6 +18,9 @@ Old version without grouping (version 1):
 <div style="float: left; width: 48%;">
 
 
+--------------------------------------------------------------------------------------------------------------------------
+
+
 However, in the first version of the script, I found that many times, when the Evolution Strategy developped a 'minority groups' (A group of points which amount is relatively small), it tend to fade away though the time and can't find the blue points they are closed to. And as we all know, sometimes the truth may be held in a handful of persons' hands. To pretect them from easily disappear， I developed the second version of the script which dynamicly group them based on their distance, and consider them as a sepereate group to evolve in the future. It's kind of like the population subdivision in real life.
 
 Algorithm with separate group and parallel computing (version 2)：
@@ -27,6 +30,11 @@ Algorithm with separate group and parallel computing (version 2)：
 </div>
 
 <div style="float: left; width: 48%;">
+  
+  
+
+-------------------------------------------------------------------------------------------------------------------------- 
+
 
 New algorithm with multiprocessing and using Evolution Strategy to estimate gradient (version 3)：
 
